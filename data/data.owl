@@ -1,0 +1,618 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/datamining#"
+     xml:base="http://www.semanticweb.org/datamining"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/datamining"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/datamining#hasActor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/datamining#isActorOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/datamining#hasDirector">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/datamining#isDirectorOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#hasWriter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/datamining#hasWriter">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/datamining#isWriterOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#isActorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/datamining#isActorOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#isDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/datamining#isDirectorOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#isWriterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/datamining#isWriterOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Age"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Country"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Gender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Genre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Genre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Language -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Language"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Name"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Nationality"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/datamining#Year"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#actor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/datamining#isActorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#director">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/datamining#isDirectorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#female -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#female">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#gender"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/datamining#male"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#gender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#genre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#male -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#male">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#movie">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#persons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#persons"/>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#writer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/datamining#writer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/datamining#isWriterOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Al_Pacino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Al_Pacino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Scarface"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#The_Godfather"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</Age>
+        <Gender>Male</Gender>
+        <Name>Al_Pacino</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Charlotte_Gainsbourg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Charlotte_Gainsbourg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Samba"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</Age>
+        <Gender>Female</Gender>
+        <Name>Charlotte Gainsbourg</Name>
+        <Nationality>English</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Clint_Eastwood -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Clint_Eastwood">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Million_Dollar_Baby"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Unforgiven"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Invictus"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Million_Dollar_Baby"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Unforgiven"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</Age>
+        <Gender>Male</Gender>
+        <Name>Clint_Eastwood</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Coppola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Coppola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#writer"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#The_Godfather"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#The_Godfather"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79</Age>
+        <Gender>Male</Gender>
+        <Name>Coppola</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#De_Palma -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#De_Palma">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Scarface"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</Age>
+        <Gender>Male</Gender>
+        <Name>De Palma</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Francois_Cluzet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Francois_Cluzet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#The_Intouchables"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63</Age>
+        <Gender>Male</Gender>
+        <Name>Francois Cluzet</Name>
+        <Nationality>French</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Frank_Darabont -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Frank_Darabont">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#The_Shawshank_Redemption"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Age>
+        <Gender>Male</Gender>
+        <Name>Frank_Darabont</Name>
+        <Nationality>French</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Invictus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Invictus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Morgan_Freeman"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Clint_Eastwood"/>
+        <Country>USA</Country>
+        <Genre>Drama</Genre>
+        <Language>English</Language>
+        <Name>Invictus</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2009</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#John_Travolta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#John_Travolta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Pulp_Fiction"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</Age>
+        <Gender>Male</Gender>
+        <Name>John_Travolta</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Kill_Bill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Kill_Bill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#John_Travolta"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Quentin_Tarantino"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Quentin_Tarantino"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Quentin_Tarantino"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Uma_Thurman"/>
+        <Country>USA</Country>
+        <Genre>Action Crime Thriller</Genre>
+        <Language>English</Language>
+        <Name>Kill_Bill</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2003</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Million_Dollar_Baby -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Million_Dollar_Baby">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Clint_Eastwood"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Morgan_Freeman"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Clint_Eastwood"/>
+        <Country>USA</Country>
+        <Genre>Drama Sport</Genre>
+        <Language>English</Language>
+        <Name>Million_Dollar_Baby</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2004</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Morgan_Freeman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Morgan_Freeman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Invictus"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Million_Dollar_Baby"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#The_Shawshank_Redemption"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Unforgiven"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</Age>
+        <Gender>Male</Gender>
+        <Name>Morgan_Freeman</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Olivier_Nakache -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Olivier_Nakache">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#writer"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Samba"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#The_Intouchables"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#Samba"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#The_Intouchables"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</Age>
+        <Gender>Male</Gender>
+        <Name>Olivier Nakache</Name>
+        <Nationality>French</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Pulp_Fiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Pulp_Fiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Quentin_Tarantino"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Quentin_Tarantino"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Quentin_Tarantino"/>
+        <Country>USA</Country>
+        <Genre>Crime Thriller</Genre>
+        <Language>English</Language>
+        <Name>Pulp_Fiction</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Quentin_Tarantino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Quentin_Tarantino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#writer"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Kill_Bill"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Kill_Bill"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/datamining#Pulp_Fiction"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#Kill_Bill"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#Pulp_Fiction"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</Age>
+        <Gender>Male</Gender>
+        <Name>Quentin Tarantino</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Samba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Samba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Charlotte_Gainsbourg"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Olivier_Nakache"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Olivier_Nakache"/>
+        <Country>France</Country>
+        <Genre>Comedy Drama</Genre>
+        <Language>French</Language>
+        <Name>Samba</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Scarface -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Scarface">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Al_Pacino"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#De_Palma"/>
+        <Country>USA</Country>
+        <Genre>Crime Drama</Genre>
+        <Language>English</Language>
+        <Name>Scarface</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1983</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Stephen_King -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Stephen_King">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#writer"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#The_Shawshank_Redemption"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</Age>
+        <Gender>Male</Gender>
+        <Name>Stephen_King</Name>
+        <Nationality>American</Nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#The_Godfather -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#The_Godfather">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Al_Pacino"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Coppola"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Coppola"/>
+        <Country>USA</Country>
+        <Genre>Thriller</Genre>
+        <Language>English</Language>
+        <Name>The Godfather</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1972</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#The_Intouchables -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#The_Intouchables">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Francois_Cluzet"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Olivier_Nakache"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Olivier_Nakache"/>
+        <Country>France</Country>
+        <Genre>Comedy Drama</Genre>
+        <Language>French</Language>
+        <Name>The Intouchables</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#The_Shawshank_Redemption -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#The_Shawshank_Redemption">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Morgan_Freeman"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Frank_Darabont"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/datamining#Stephen_King"/>
+        <Country>USA</Country>
+        <Genre>Thriller</Genre>
+        <Language>English</Language>
+        <Name>The Shawshank Redemption</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</Year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Uma_Thurman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Uma_Thurman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#writer"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/datamining#Pulp_Fiction"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/datamining#Kill_Bill"/>
+        <Age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</Age>
+        <Gender>Female</Gender>
+        <Name>Uma_Thurman</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/datamining#Unforgiven -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/datamining#Unforgiven">
+        <rdf:type rdf:resource="http://www.semanticweb.org/datamining#movie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Clint_Eastwood"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/datamining#Morgan_Freeman"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/datamining#Clint_Eastwood"/>
+        <Country>USA</Country>
+        <Genre>Drama Western</Genre>
+        <Language>English</Language>
+        <Name>Unforgiven</Name>
+        <Year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1992</Year>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
