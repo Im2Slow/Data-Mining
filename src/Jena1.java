@@ -7,10 +7,10 @@ public class Jena1 {
     ExtendedIterator individuals = ontModel.listIndividuals();
     while(individuals.hasNext()){
         Individual singleIndividual = (Individual) individuals.next();
-        if(singleIndividual.hasRDFType("http://www.semanticweb.org/datamining#persons")) {
+        if(singleIndividual.hasRDFType("http://www.semanticweb.org/datamining#actor")) {
             String nameProperty = singleIndividual.getLocalName();
             System.out.println(nameProperty);
-        }
+            }
         }
     }
 }
